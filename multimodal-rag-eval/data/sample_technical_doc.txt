@@ -1,0 +1,32 @@
+Technical Architecture Document - Sample for RAG Demo
+
+[TABLE]
+Component | Specification | Value
+CPU | Cores | 8
+RAM | Capacity | 32GB
+Storage | Type | NVMe SSD
+Network | Throughput | 10 Gbps
+[/TABLE]
+
+System Integration Overview
+
+The Redwire Space payload processing unit integrates with the Western Union payment gateway via secure REST API. Data flows through encrypted channels using TLS 1.3.
+
+Key integration points:
+- Payment validation: 99.9% uptime SLA
+- Transaction latency: < 200ms p95
+- Compliance: PCI-DSS Level 1
+- Audit logging: 7-year retention
+
+Architecture Diagram Description: The system consists of three tiers:
+1. Presentation Layer - Streamlit dashboard for evaluation metrics
+2. Service Layer - FastAPI RAG-as-a-Service with hybrid search
+3. Data Layer - ChromaDB (vector) + BM25 (keyword) indexes
+
+RAG Evaluation Metrics (Ragas):
+- Faithfulness: Measures hallucination rate (0-1, higher = less hallucination)
+- Answer Relevancy: Measures how well the answer addresses the question (0-1)
+
+Hybrid Search combines:
+- Vector search (semantic similarity via embeddings)
+- BM25 search (keyword matching for technical terms)

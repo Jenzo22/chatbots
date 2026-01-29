@@ -1,0 +1,41 @@
+# Multimodal RAG with Evaluation - RAG-as-a-Service
+# Target: Architect / Software & AI Director roles
+
+# Core RAG Framework
+llama-index>=0.10.0
+llama-index-core>=0.10.0
+llama-index-vector-stores-chroma>=0.2.0
+llama-index-retrievers-bm25>=0.2.0
+PyStemmer>=2.2.0
+llama-index-embeddings-openai>=0.2.0
+llama-index-llms-openai>=0.2.0
+
+# Vector Store
+chromadb>=0.4.0
+
+# PDF Parsing - Tables & Diagrams
+unstructured[pdf]>=0.12.0
+unstructured[all-docs]>=0.12.0
+pdf2image>=1.16.0
+pytesseract>=0.3.10
+
+# RAG Evaluation (RAGAS)
+ragas>=0.1.0
+langchain-openai>=0.0.5
+langchain-core>=0.2.0
+
+# LLM & Embeddings
+openai>=1.0.0
+tiktoken>=0.5.0
+
+# Dashboard & API
+streamlit>=1.28.0
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+numpy>=1.24.0
+nest-asyncio>=1.5.0
