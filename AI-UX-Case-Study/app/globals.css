@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ai-primary: #16a34a;
+  --ai-uncertainty-low: #22c55e;
+  --ai-uncertainty-medium: #eab308;
+  --ai-uncertainty-high: #ef4444;
+}
+
+/* Focus visible for accessibility - never remove focus outline */
+:focus-visible {
+  outline: 2px solid var(--ai-primary);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  :root {
+    --ai-primary: #0d7a2e;
+  }
+}
