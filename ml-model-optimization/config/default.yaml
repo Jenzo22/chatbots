@@ -1,0 +1,43 @@
+# ML Model Optimization - Default Configuration
+# =============================================
+
+model:
+  name: "resnet18"
+  num_classes: 10
+  pretrained: true
+
+training:
+  epochs: 10
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+optimization:
+  quantization:
+    enabled: true
+    method: "dynamic"  # dynamic | static | qat
+    dtype: "int8"
+  
+  pruning:
+    enabled: true
+    amount: 0.3  # 30% of parameters pruned
+    method: "l1_unstructured"  # l1_unstructured | random_unstructured | ln_structured
+  
+  batching:
+    strategies:
+      - batch_size: 1
+      - batch_size: 8
+      - batch_size: 16
+      - batch_size: 32
+      - batch_size: 64
+
+benchmark:
+  warmup_iterations: 10
+  benchmark_iterations: 100
+  device: "cpu"  # cpu | cuda | mps
+
+gcp:
+  project_id: null
+  region: "us-central1"
+  bucket_name: null
+  endpoint_name: null
