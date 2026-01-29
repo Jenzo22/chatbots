@@ -1,0 +1,18 @@
+# Quick start: docker-compose up
+# API: http://localhost:8000
+# Docs: http://localhost:8000/docs
+
+services:
+  agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HITL_APPROVAL_THRESHOLD_USD=5000
+      - MAX_TOOL_RETRIES=3
+      - DB_PATH=/app/data/checkpoints.db
+    volumes:
+      - agent_data:/app/data
+
+volumes:
+  agent_data:
